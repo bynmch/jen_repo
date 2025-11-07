@@ -1,0 +1,23 @@
+server:
+  port: 7777
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    # 도커 컴포즈용
+    # url: jdbc:mariadb://mariadb-persist:3306/calcdb
+    # 쿠버네티스용(section03)
+    url: jdbc:mariadb://mariadb003ser:3310/calcdb
+    username: root
+    password: root1234
+  jpa:
+    hibernate:
+
+      # create: 서버가 새로 실행 될 때 기존 테이블을 drop하고 새로 create
+      # update: 서버가 새로 실행 될 때 기존 테이블이 없다면 create, 있다면 컬럼 추가 시에만 alter
+      ddl-auto: update
+    show_sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MariaDBDialect
