@@ -1,0 +1,29 @@
+server:
+  port: 7777
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    # 도커 컴포즈용
+    # url: jdbc:mariadb://mariadb-persist:3306/calcdb
+    # 쿠버네티스용(section03)
+#    url: jdbc:mariadb://mariadb003ser:3310/calcdb
+    ## mem(Memory Mode): 메모리에만 저장하고 어플리케이션 종료 시 삭제
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+  jpa:
+    hibernate:
+
+      # create: 서버가 새로 실행 될 때 기존 테이블을 drop하고 새로 create
+      # update: 서버가 새로 실행 될 때 기존 테이블이 없다면 create, 있다면 컬럼 추가 시에만 alter
+      ## 어플리케이션 시작 시 테이블 생성, 종료 시 제거
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        ## MariaDB DBMS 설정
+       # dialect: org.hibernate.dialect.MariaDBDialect
+        ## H2 DBMS 설정
+        dialect: org.hibernate.dialect.H2Dialect
