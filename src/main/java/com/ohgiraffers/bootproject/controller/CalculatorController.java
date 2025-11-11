@@ -25,17 +25,9 @@ public class CalculatorController {
 
     @GetMapping("/health")
     public String healthCheck() {
-        return "젠킨스 건강합니다~~~ 굿 먼데이";
+        return "jenkins is processing...";
     }
 
-//    @GetMapping("/plus")
-//    public ResponseEntity<CalculatorDto> plusTwoNumbers(CalculatorDto calculatorDto) {
-//        log.info("calculatorDto = {}", calculatorDto);
-//        int result = service.plusTwoNumbers(calculatorDto);
-//        calculatorDto.setSum(result);
-//
-//        return ResponseEntity.ok().body(calculatorDto);
-//    }
 
     @PostMapping("/plus")
     public ResponseEntity<CalculatorDto> plusTwoNumbers(@RequestBody CalculatorDto calculatorDto) {

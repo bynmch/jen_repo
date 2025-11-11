@@ -23,7 +23,6 @@ public class CalculatorService {
 
     @Transactional
     public int plusTwoNumbers(CalculatorDto calculatorDto) {
-//        return calculatorDto.getNum1() + calculatorDto.getNum2();
         int result = calculatorDto.getNum1() + calculatorDto.getNum2();
 
         // 계산 결과를 DB에 저장

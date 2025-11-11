@@ -4,8 +4,10 @@ server:
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
+
     # 도커 컴포즈용
     # url: jdbc:mariadb://mariadb-persist:3306/calcdb
+
     # 쿠버네티스용(section03)
     url: jdbc:mariadb://mariadb003ser:3310/calcdb
     username: root
