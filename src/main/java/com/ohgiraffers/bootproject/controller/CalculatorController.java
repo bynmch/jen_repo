@@ -25,7 +25,7 @@ public class CalculatorController {
 
     @GetMapping("/health")
     public String healthCheck() {
-        return "jenkins is processing... to last argocd";
+        return "jenkins is processing... To argoCD...";
     }
 
 
